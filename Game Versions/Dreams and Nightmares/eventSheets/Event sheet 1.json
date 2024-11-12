@@ -1,0 +1,32 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 205166893424909,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Aquarium"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 562153516799120,
+					"parameters": {
+						"layout": "seaDream"
+					}
+				}
+			],
+			"sid": 155606959661762
+		}
+	],
+	"sid": 409923043173519
+}

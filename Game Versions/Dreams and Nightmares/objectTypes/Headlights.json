@@ -1,0 +1,59 @@
+{
+	"name": "Headlights",
+	"plugin-id": "Sprite",
+	"sid": 738220299742015,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2400,
+						"height": 480,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9228538,
+						"collisionPoly": {
+							"points": [
+								0.04375,
+								0,
+								0.96875,
+								0,
+								0.9875,
+								0.125,
+								0.9875,
+								0.28125,
+								0.96875,
+								0.375,
+								0.775,
+								0.5625,
+								0.225,
+								0.5625,
+								0.04375,
+								0.4375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 585356745721918,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

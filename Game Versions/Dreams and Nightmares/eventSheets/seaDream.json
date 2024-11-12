@@ -1,0 +1,439 @@
+{
+	"name": "seaDream",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Star",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 540535534921259
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 571681199284345,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".35"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade1",
+							"sid": 622645197526954,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "starBlade1",
+							"sid": 559742218276275,
+							"disabled": true,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"acceleration": "145"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 369869461457800,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".75"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade2",
+							"sid": 929058260535730,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 642614662802423,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".65"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade3",
+							"sid": 343720760653243,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 409536707792993
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 340006961111675
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "starBlade1",
+							"sid": 412077155218952,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "starBlade2",
+							"sid": 148784408946671,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "starBlade3",
+							"sid": 646105683372669,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						}
+					],
+					"sid": 111784843139482
+				}
+			],
+			"sid": 485244774135469
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Lamp",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 323028775044530,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Sprite",
+							"sid": 550491029294570,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"value": "5"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite",
+							"sid": 168134094694433,
+							"parameters": {
+								"frame-number": "5"
+							}
+						}
+					],
+					"sid": 586331882304995
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 403223390877838,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite",
+							"sid": 129224982499326,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 695672240359324
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 704304005608587,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite",
+							"sid": 783101488012386,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 407779319571351
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 539682724908582,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite",
+							"sid": 578811267029200,
+							"parameters": {
+								"frame-number": "2"
+							}
+						}
+					],
+					"sid": 669153660063449
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 704165750447032,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite",
+							"sid": 410800510356149,
+							"parameters": {
+								"frame-number": "3"
+							}
+						}
+					],
+					"sid": 432260844958369
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 235263997882399,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite",
+							"sid": 799419237912335,
+							"parameters": {
+								"frame-number": "4"
+							}
+						}
+					],
+					"sid": 163796517502241
+				}
+			],
+			"sid": 454416574516440
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bullet",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 978275043816146,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Sprite3",
+							"sid": 935197280017427,
+							"parameters": {
+								"object": "Sprite2",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 760835130896264
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Sprite2",
+							"sid": 916662192675606,
+							"parameters": {
+								"object": "Sprite"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Sprite",
+							"sid": 127700861454928,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Sprite2",
+							"sid": 862357215631168
+						}
+					],
+					"sid": 876629825747716
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Sprite2",
+							"sid": 212210810270961
+						}
+					],
+					"actions": [],
+					"sid": 393259021986452
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 713124932930872
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Sprite3",
+							"sid": 709746296564529,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "starFace",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 252101111466927
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 141089450043875
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Sprite3",
+							"sid": 774215544104698,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 880067628811642
+				}
+			],
+			"sid": 390546521523160
+		}
+	],
+	"sid": 309825769500854
+}

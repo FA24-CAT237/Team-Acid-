@@ -1,0 +1,73 @@
+{
+	"name": "starBlade2",
+	"plugin-id": "Sprite",
+	"sid": 904927678185691,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 780566121439354
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 164,
+						"height": 164,
+						"originX": 0.4573170731707317,
+						"originY": 0.36585365853658536,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 96487,
+						"collisionPoly": {
+							"points": [
+								0.4817073170731707,
+								0.16463414634146342,
+								0.5365853658536586,
+								0.16463414634146342,
+								0.7621951219512195,
+								0.3780487804878049,
+								0.823170731707317,
+								0.49390243902439024,
+								0.823170731707317,
+								0.5365853658536586,
+								0.7804878048780488,
+								0.5792682926829268,
+								0.7073170731707317,
+								0.5975609756097561,
+								0.21951219512195122,
+								0.5609756097560976,
+								0.17682926829268292,
+								0.5365853658536586,
+								0.1402439024390244,
+								0.49390243902439024,
+								0.12195121951219512,
+								0.4329268292682927,
+								0.1524390243902439,
+								0.3353658536585366
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 803052641289329,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

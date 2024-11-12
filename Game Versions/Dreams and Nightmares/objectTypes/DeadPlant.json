@@ -1,0 +1,67 @@
+{
+	"name": "DeadPlant",
+	"plugin-id": "Sprite",
+	"sid": 971548129242544,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 480,
+						"height": 480,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1546617,
+						"collisionPoly": {
+							"points": [
+								0.46875,
+								0.03125,
+								0.53125,
+								0.03125,
+								0.8125,
+								0.125,
+								0.8125,
+								0.1875,
+								0.71875,
+								0.90625,
+								0.65625,
+								0.96875,
+								0.59375,
+								1,
+								0.40625,
+								1,
+								0.34375,
+								0.96875,
+								0.28125,
+								0.90625,
+								0.1875,
+								0.1875,
+								0.1875,
+								0.125
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 754911851317927,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
