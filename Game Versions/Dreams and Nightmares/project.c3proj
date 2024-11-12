@@ -107,15 +107,25 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1",
-			"seaDream"
+			"Room",
+			"seaDream",
+			"dreamscapeDream",
+			"heavenDream",
+			"eeriemansionNightmare",
+			"darkwoodsNightmare",
+			"hellscapeNightmare"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"seaDream"
+			"seaDream",
+			"dreamscapeDream",
+			"heavenDream",
+			"eeriemansionNightmare",
+			"darkwoodsNightmare",
+			"hellscapeNightmare",
+			"Room"
 		],
 		"subfolders": []
 	},
@@ -274,7 +284,7 @@
 		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 1708,
-	"viewportHeight": 960,
+	"viewportWidth": 854,
+	"viewportHeight": 480,
 	"firstLayout": null
 }

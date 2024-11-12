@@ -371,6 +371,22 @@
 							"parameters": {
 								"frame-number": "4"
 							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 279550546376902,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 988509589661793,
+							"parameters": {
+								"layout": "Room"
+							}
 						}
 					],
 					"sid": 163796517502241
@@ -443,18 +459,6 @@
 						}
 					],
 					"sid": 876629825747716
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-created",
-							"objectClass": "Sprite2",
-							"sid": 212210810270961
-						}
-					],
-					"actions": [],
-					"sid": 393259021986452
 				},
 				{
 					"eventType": "block",
