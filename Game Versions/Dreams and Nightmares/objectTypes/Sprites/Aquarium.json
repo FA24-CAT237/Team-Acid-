@@ -1,0 +1,69 @@
+{
+	"name": "Aquarium",
+	"plugin-id": "Sprite",
+	"sid": 218272397966296,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 293048927966350
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 830683666956075
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 91,
+						"height": 71,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9780366,
+						"collisionPoly": {
+							"points": [
+								0.967032967032967,
+								0.28169014084507044,
+								0.989010989010989,
+								0.9859154929577465,
+								0.6153846153846154,
+								0.9859154929577465,
+								0.032967032967032926,
+								0.7464788732394366,
+								0.010989010989011047,
+								0.014084507042253521,
+								0.38461538461538464,
+								0.014084507042253521
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 630976673400816,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

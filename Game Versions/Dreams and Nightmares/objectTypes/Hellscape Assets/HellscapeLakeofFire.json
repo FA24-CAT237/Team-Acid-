@@ -1,0 +1,85 @@
+{
+	"name": "HellscapeLakeofFire",
+	"plugin-id": "Sprite",
+	"sid": 986571214305169,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 4802,
+						"height": 407,
+						"originX": 0.5,
+						"originY": 0.9975429975429976,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1358323,
+						"collisionPoly": {
+							"points": [
+								0.23448563098708872,
+								0.002457002457002457,
+								0.7655143690129113,
+								0.002457002457002457,
+								0.9623073719283631,
+								0.11302211302211303,
+								0.9997917534360683,
+								0.5184275184275184,
+								0.9997917534360683,
+								1,
+								0.00020824656393169514,
+								1,
+								0.00020824656393169514,
+								0.5184275184275184,
+								0.03769262807163682,
+								0.11302211302211303
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 4802,
+						"height": 377,
+						"originX": 0.4997917534360683,
+						"originY": 0.9893899204244032,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4368232,
+						"collisionPoly": {
+							"points": [
+								0.00020824656393169514,
+								0,
+								0.9997917534360683,
+								0,
+								0.9997917534360683,
+								0.9973474801061007,
+								0.00020824656393169514,
+								0.9973474801061007
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 655105047081489,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

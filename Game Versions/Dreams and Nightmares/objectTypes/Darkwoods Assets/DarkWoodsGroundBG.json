@@ -1,0 +1,28 @@
+{
+	"name": "DarkWoodsGroundBG",
+	"plugin-id": "TiledBg",
+	"sid": 289621514695393,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 105252084036805
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 3000,
+		"height": 24,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 5785742,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

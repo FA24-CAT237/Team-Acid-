@@ -1,0 +1,81 @@
+{
+	"name": "DeadPlant",
+	"plugin-id": "Sprite",
+	"sid": 971548129242544,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 533162674831212
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 877744372949821
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 302,
+						"height": 467,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1631315,
+						"collisionPoly": {
+							"points": [
+								0.4503311258278146,
+								0.0021413276231263384,
+								0.5496688741721855,
+								0.0021413276231263384,
+								0.9966887417218543,
+								0.09850107066381156,
+								0.9966887417218543,
+								0.16274089935760172,
+								0.847682119205298,
+								0.9014989293361885,
+								0.7483443708609272,
+								0.9657387580299786,
+								0.6490066225165563,
+								0.9978586723768736,
+								0.3509933774834437,
+								0.9978586723768736,
+								0.25165562913907286,
+								0.9657387580299786,
+								0.152317880794702,
+								0.9014989293361885,
+								0.0033112582781456954,
+								0.16274089935760172,
+								0.0033112582781456954,
+								0.09850107066381156
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 754911851317927,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

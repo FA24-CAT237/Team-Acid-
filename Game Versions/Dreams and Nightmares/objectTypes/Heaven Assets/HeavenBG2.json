@@ -1,0 +1,51 @@
+{
+	"name": "HeavenBG2",
+	"plugin-id": "Sprite",
+	"sid": 173441055368294,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 166,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.34375,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4416189,
+						"collisionPoly": {
+							"points": [
+								0.006024096385542169,
+								0.010416666666666666,
+								0.9939759036144579,
+								0.010416666666666666,
+								0.9939759036144579,
+								0.9895833333333334,
+								0.006024096385542169,
+								0.9895833333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 545023188062969,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"name": "HoodedOnes",
+	"plugin-id": "Sprite",
+	"sid": 987849669000420,
+	"instanceVariables": [
+		{
+			"name": "Turn",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 278013390596254
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"TheHooded8",
+		"TheHooded",
+		"TheHooded2",
+		"TheHooded3",
+		"TheHooded4",
+		"TheHooded5",
+		"TheHooded6",
+		"TheHooded7"
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"name": "ParadiseBG",
+	"plugin-id": "Sprite",
+	"sid": 120561162243220,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 166,
+						"height": 95,
+						"originX": 0.5,
+						"originY": 0.4421052631578947,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9380714,
+						"collisionPoly": {
+							"points": [
+								0.006024096385542169,
+								0.010526315789473684,
+								0.9939759036144579,
+								0.010526315789473684,
+								0.9939759036144579,
+								0.9894736842105263,
+								0.006024096385542169,
+								0.9894736842105263
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 730290065224006,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

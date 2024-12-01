@@ -1,0 +1,22 @@
+{
+	"name": "EerieMansionBG",
+	"plugin-id": "TiledBg",
+	"sid": 446798902206808,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1708,
+		"height": 1708,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6256810,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,99 @@
+{
+	"name": "Title Screen",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 508228767341987,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Sprite7"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 377211061854127,
+					"parameters": {
+						"layout": "\"Room\""
+					}
+				}
+			],
+			"sid": 679672942085675
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 135948496584807,
+					"parameters": {
+						"object": "Sprite7"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Sprite7",
+					"sid": 694707055587370,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Sprite7",
+					"sid": 345732484880043,
+					"parameters": {
+						"width": "375",
+						"height": "375"
+					}
+				}
+			],
+			"sid": 713985133004677
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 619567815565953,
+					"parameters": {
+						"object": "Sprite7"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Sprite7",
+					"sid": 254701367829040,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Sprite7",
+					"sid": 336274798648614,
+					"parameters": {
+						"width": "325",
+						"height": "325"
+					}
+				}
+			],
+			"sid": 121534706959788
+		}
+	],
+	"sid": 377106851265256
+}

@@ -2,30 +2,2620 @@
 	"name": "Room",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Scale",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 614989858800515
+		},
+		{
+			"eventType": "variable",
+			"name": "TransitionTimer",
+			"type": "number",
+			"initialValue": "7",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 299870232429511
+		},
+		{
+			"eventType": "variable",
+			"name": "Dreams",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 803007640812227
+		},
+		{
+			"eventType": "variable",
+			"name": "Nightmares",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 421820661373167
+		},
+		{
+			"eventType": "variable",
+			"name": "AquariumLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 637652135766655
+		},
+		{
+			"eventType": "variable",
+			"name": "CandleLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 601317146699085
+		},
+		{
+			"eventType": "variable",
+			"name": "HeadlightsLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 582765091883214
+		},
+		{
+			"eventType": "variable",
+			"name": "DeadPlantLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 912479046900239
+		},
+		{
+			"eventType": "variable",
+			"name": "NightmareBed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 721267860882443
+		},
+		{
+			"eventType": "variable",
+			"name": "DreamBed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 636827823658879
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Zoom In Transitions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 122046998675988
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "MouseCursorFocus",
+							"sid": 631213757937781,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						}
+					],
+					"sid": 685952735860521
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 317115353524570
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "MouseCursor",
+							"sid": 149688441633788,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "MouseCursorFocus",
+							"sid": 998256553357149,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 125508391336899
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 968544013661329
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 636761964154572,
+							"parameters": {
+								"scale": "Scale"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "CountDown",
+							"sid": 287118615345780,
+							"parameters": {
+								"text": "TransitionTimer"
+							}
+						}
+					],
+					"sid": 338952672495891
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "MouseCursor",
+							"sid": 721485928887092,
+							"parameters": {
+								"object": "Aquarium"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "MouseCursor",
+							"sid": 168110116064139,
+							"parameters": {
+								"object": "Candle"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "MouseCursor",
+							"sid": 507834634392848,
+							"parameters": {
+								"object": "DeadPlant"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "MouseCursor",
+							"sid": 823765042185355,
+							"parameters": {
+								"object": "Headlights"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "MouseCursor",
+							"sid": 643115672315629,
+							"parameters": {
+								"object": "DreamBed"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "MouseCursor",
+							"sid": 470296505148405,
+							"parameters": {
+								"object": "NightmareBed"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 802883737440551,
+							"parameters": {
+								"variable": "Scale",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-cycle-position",
+							"objectClass": "MouseCursorFocus",
+							"sid": 841227951128946,
+							"behaviorType": "Sine",
+							"parameters": {
+								"cycle-position": "0"
+							}
+						},
+						{
+							"id": "set-period",
+							"objectClass": "MouseCursorFocus",
+							"sid": 428860136865578,
+							"behaviorType": "Sine",
+							"parameters": {
+								"period": "20"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "MouseCursorFocus",
+							"sid": 639083725027980,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "MouseCursorFocus",
+							"sid": 854466634933961,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 765939997520435,
+							"parameters": {
+								"variable": "TransitionTimer",
+								"value": "7"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Aquarium",
+							"sid": 445992114912395,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Candle",
+							"sid": 104591526940328,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "DeadPlant",
+							"sid": 515236496095269,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Headlights",
+							"sid": 592171062042955,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "DreamBed",
+							"sid": 783373075259349,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "NightmareBed",
+							"sid": 804023964773901,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 299485561809804
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Aquarium Transition",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 324288124976786,
+									"parameters": {
+										"object": "Aquarium"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 641267037448994,
+									"parameters": {
+										"comparison": 5,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 187479068744875,
+									"parameters": {
+										"variable": "AquariumLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Aquarium",
+									"sid": 321294741343177,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 654698701111677,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 800564167283804,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 692978606673916,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 298756909790514,
+											"parameters": {
+												"interval-seconds": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 360492914538905,
+											"parameters": {
+												"variable": "Scale",
+												"value": ".05"
+											}
+										}
+									],
+									"sid": 421491884490468
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 549097347442144,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 973640041803457,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 322778736974245
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 152943248765147,
+									"parameters": {
+										"object": "Aquarium"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 854127903936357,
+									"parameters": {
+										"comparison": 3,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 833928944148092,
+									"parameters": {
+										"variable": "AquariumLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Aquarium",
+									"sid": 220894603350611,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 583652281510493,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 584230395268821,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 854415073172859
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 660425115265517,
+									"parameters": {
+										"variable": "TransitionTimer",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 341568962552011,
+									"parameters": {
+										"object": "Aquarium"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 719703871102916,
+									"parameters": {
+										"variable": "AquariumLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 239035918006462,
+									"parameters": {
+										"layout": "seaDream"
+									}
+								}
+							],
+							"sid": 225348287132997
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 404289497900771,
+									"parameters": {
+										"object": "Aquarium"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 259838775064104,
+									"parameters": {
+										"variable": "AquariumLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 583244431853020,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 480651443169084,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 435460816833185,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 482387682588916
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 893550874747192,
+									"parameters": {
+										"variable": "AquariumLevel",
+										"comparison": 5,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Aquarium",
+									"sid": 817071056398764,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 414865832748738
+						}
+					],
+					"sid": 501192466624889
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Candle Transition",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 528800274205755,
+									"parameters": {
+										"object": "Candle"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 810089991079264,
+									"parameters": {
+										"comparison": 5,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 834219407991545,
+									"parameters": {
+										"variable": "CandleLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Candle",
+									"sid": 231088810175036,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 590344826542984,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 956271781827271,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 698880560237072,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 476916341085281,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 567550484170839,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 863333190414762
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 184958849806302,
+											"parameters": {
+												"interval-seconds": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 437044650332272,
+											"parameters": {
+												"variable": "Scale",
+												"value": ".05"
+											}
+										}
+									],
+									"sid": 903940306392204
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 728407391619833,
+									"parameters": {
+										"object": "Candle"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 447326676878533,
+									"parameters": {
+										"comparison": 3,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 811226664515578,
+									"parameters": {
+										"variable": "CandleLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Candle",
+									"sid": 775349653586518,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 766299898673893,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 982611342553927,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 634766649604750
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 518613900373092,
+									"parameters": {
+										"variable": "TransitionTimer",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 397523436270047,
+									"parameters": {
+										"object": "Candle"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 151446315508486,
+									"parameters": {
+										"variable": "CandleLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 232613057518578,
+									"parameters": {
+										"layout": "eeriemansionNightmare"
+									}
+								}
+							],
+							"sid": 777893616026987
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 734983310915828,
+									"parameters": {
+										"object": "Candle"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 579252276315583,
+									"parameters": {
+										"variable": "CandleLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 534454623039206,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 554009027339127,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 497478541274169,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 152355032204978
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 997282597920191,
+									"parameters": {
+										"variable": "CandleLevel",
+										"comparison": 5,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Candle",
+									"sid": 975738576141054,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 946616121012916
+						}
+					],
+					"sid": 116539226566257
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Headlights Transition",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 161153426382156,
+									"parameters": {
+										"object": "Headlights"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 694165368287579,
+									"parameters": {
+										"comparison": 5,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 204203402572049,
+									"parameters": {
+										"variable": "HeadlightsLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Headlights",
+									"sid": 503516151573858,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 599905188691549,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 328957299461054,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 102260569649737,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 863907428419004,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 383851976258342,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 483455327447185
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 784601436967637,
+											"parameters": {
+												"interval-seconds": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 981480681502933,
+											"parameters": {
+												"variable": "Scale",
+												"value": ".05"
+											}
+										}
+									],
+									"sid": 729246582273253
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 101268467540951,
+									"parameters": {
+										"object": "Headlights"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 584067895338807,
+									"parameters": {
+										"comparison": 3,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 876863191233795,
+									"parameters": {
+										"variable": "HeadlightsLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Headlights",
+									"sid": 570163654054437,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 179269856208379,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 536481939040618,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 221143262578431
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 126235119460132,
+									"parameters": {
+										"variable": "TransitionTimer",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 705263197305867,
+									"parameters": {
+										"object": "Headlights"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 498720923766119,
+									"parameters": {
+										"variable": "HeadlightsLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 457777250099611,
+									"parameters": {
+										"layout": "dreamscapeDream"
+									}
+								}
+							],
+							"sid": 301812596092440
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Headlights",
+									"sid": 953754218040387,
+									"parameters": {
+										"instance-variable": "Level",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 188473080274027,
+									"parameters": {
+										"variable": "HeadlightsLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 619284293462369,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 547951366433124,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 444914388295086,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 470042065594275
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 309870227194765,
+									"parameters": {
+										"variable": "HeadlightsLevel",
+										"comparison": 5,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Headlights",
+									"sid": 451118536498951,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 677911210754388
+						}
+					],
+					"sid": 645595425051768
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "DeadPlant Transition",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 203958162943681,
+									"parameters": {
+										"object": "DeadPlant"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 965806612388359,
+									"parameters": {
+										"comparison": 5,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 434849374287422,
+									"parameters": {
+										"variable": "DeadPlantLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "DeadPlant",
+									"sid": 423803659396281,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 804179511392741,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 460543462914677,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 851885099033643,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 780855296534956,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 849973145622935,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 657538872011013
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 181159833465625,
+											"parameters": {
+												"interval-seconds": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 880797947397449,
+											"parameters": {
+												"variable": "Scale",
+												"value": ".05"
+											}
+										}
+									],
+									"sid": 490199380153228
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 432378685690855,
+									"parameters": {
+										"object": "DeadPlant"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 528181534169127,
+									"parameters": {
+										"comparison": 3,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 609198519650713,
+									"parameters": {
+										"variable": "DeadPlantLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "DeadPlant",
+									"sid": 713515631953193,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 879838629083773,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 459654165958028,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 169009088891014
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 952310654653287,
+									"parameters": {
+										"variable": "TransitionTimer",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 672587442102848,
+									"parameters": {
+										"object": "DeadPlant"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 855454862859138,
+									"parameters": {
+										"variable": "DeadPlantLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 353017504931551,
+									"parameters": {
+										"layout": "darkwoodsNightmare"
+									}
+								}
+							],
+							"sid": 546212364179572
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 630564019427586,
+									"parameters": {
+										"object": "DeadPlant"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 152862152053947,
+									"parameters": {
+										"variable": "DeadPlantLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 275734009626755,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 928282495271534,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 453849961854437,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 361712990182875
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 104357672219951,
+									"parameters": {
+										"variable": "DeadPlantLevel",
+										"comparison": 5,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "DeadPlant",
+									"sid": 328125818150401,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 166757067469331
+						}
+					],
+					"sid": 811259942624163
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Nightmare Bed Transition",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 251952433339308,
+									"parameters": {
+										"object": "NightmareBed"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 583419840045394,
+									"parameters": {
+										"comparison": 5,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 240314217030280,
+									"parameters": {
+										"variable": "NightmareBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "NightmareBed",
+									"sid": 349287155235413,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 902278701115294,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 648832116191840,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 185085351637119,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 629444925855773,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 650988701890493,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 698614863525420
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 223154549582186,
+											"parameters": {
+												"interval-seconds": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 834892549948895,
+											"parameters": {
+												"variable": "Scale",
+												"value": ".05"
+											}
+										}
+									],
+									"sid": 512401672497450
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 647689529730901,
+									"parameters": {
+										"object": "NightmareBed"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 326606889260245,
+									"parameters": {
+										"comparison": 3,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 928732031964424,
+									"parameters": {
+										"variable": "NightmareBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "NightmareBed",
+									"sid": 981993157824475,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 463025710057604,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 969568736275835,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 664198840298626
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 794774405224426,
+									"parameters": {
+										"variable": "TransitionTimer",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 511990081794525,
+									"parameters": {
+										"object": "NightmareBed"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 619406060946487,
+									"parameters": {
+										"variable": "NightmareBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 772378555639824,
+									"parameters": {
+										"layout": "hellscapeNightmare"
+									}
+								}
+							],
+							"sid": 966985836325176
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 917004406688653,
+									"parameters": {
+										"object": "NightmareBed"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 178259077886175,
+									"parameters": {
+										"variable": "NightmareBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 479367239390115,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 616325643931593,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 106542910380442,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 100492964586758
+								}
+							]
+						}
+					],
+					"sid": 482470151833439
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Dream Bed Transition",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 806283373218752,
+									"parameters": {
+										"object": "DreamBed"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 492758317558751,
+									"parameters": {
+										"comparison": 5,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 533887944133278,
+									"parameters": {
+										"variable": "DreamBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "DreamBed",
+									"sid": 151025553532110,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 148079903127728,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 901978919215830,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 471247005939782,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 550157950749132,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 266619268602961,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 114881975884710
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 252437038306783,
+											"parameters": {
+												"interval-seconds": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 626011337110437,
+											"parameters": {
+												"variable": "Scale",
+												"value": ".05"
+											}
+										}
+									],
+									"sid": 263878903665449
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 156795746803686,
+									"parameters": {
+										"object": "DreamBed"
+									}
+								},
+								{
+									"id": "compare-height",
+									"objectClass": "MouseCursorFocus",
+									"sid": 557287603836574,
+									"parameters": {
+										"comparison": 3,
+										"height": "40"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 340029430363253,
+									"parameters": {
+										"variable": "DreamBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "DreamBed",
+									"sid": 670019412711374,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "MouseCursorFocus",
+									"sid": 473169111276888,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MouseCursorFocus",
+									"sid": 765986180723431,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 663200168395836
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 386795022198939,
+									"parameters": {
+										"variable": "TransitionTimer",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 431930745750429,
+									"parameters": {
+										"object": "DreamBed"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 772595129252578,
+									"parameters": {
+										"variable": "DreamBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 132960702835651,
+									"parameters": {
+										"layout": "heavenDream"
+									}
+								}
+							],
+							"sid": 839993026148620
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "MouseCursor",
+									"sid": 970772763281242,
+									"parameters": {
+										"object": "DreamBed"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 645957429168870,
+									"parameters": {
+										"variable": "DreamBed",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 417191514705306,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 943030884997805,
+											"parameters": {
+												"interval-seconds": "1.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 796038835462519,
+											"parameters": {
+												"variable": "TransitionTimer",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 174073858497372
+								}
+							]
+						}
+					],
+					"sid": 504675077891772
+				}
+			],
+			"sid": 538789564676349
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Indicators",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 278522985990716,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 659358986863728,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 474203407069696,
+							"parameters": {
+								"animation": "\"Dream\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 404215840045769,
+							"parameters": {
+								"object-to-create": "DreamBed",
+								"layer": "1",
+								"x": "910",
+								"y": "481",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "DreamBed",
+							"sid": 245573241254842,
+							"parameters": {
+								"width": "944",
+								"height": "347"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "DreamBed",
+							"sid": 312099079210897,
+							"parameters": {
+								"x": "835",
+								"y": "786"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Aquarium",
+							"sid": 552491602718936,
+							"parameters": {
+								"instance-variable": "Level",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Candle",
+							"sid": 299657900748142,
+							"parameters": {
+								"instance-variable": "Level",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "DeadPlant",
+							"sid": 681911621399826,
+							"parameters": {
+								"instance-variable": "Level",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Headlights",
+							"sid": 816023406910035,
+							"parameters": {
+								"instance-variable": "Level",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 670084367659289
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 710257671385274,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 993322215480640,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 510502682334396,
+							"parameters": {
+								"animation": "\"Nightmare\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 143944898650474,
+							"parameters": {
+								"object-to-create": "NightmareBed",
+								"layer": "1",
+								"x": "910",
+								"y": "481",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "NightmareBed",
+							"sid": 873623583211940,
+							"parameters": {
+								"width": "944",
+								"height": "347"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "NightmareBed",
+							"sid": 924082647249904,
+							"parameters": {
+								"x": "835",
+								"y": "786"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 645325480649278,
+							"parameters": {
+								"variable": "AquariumLevel",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 279134227647528,
+							"parameters": {
+								"variable": "CandleLevel",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 268651091153846,
+							"parameters": {
+								"variable": "DeadPlantLevel",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 219871388786673,
+							"parameters": {
+								"variable": "HeadlightsLevel",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 997856241923958
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 349679426467714,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 412346182500184,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 966623828920023,
+							"parameters": {
+								"animation": "\"Neutral\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 192563105313651
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 465655618651658,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 458306994855002,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 575873037591173,
+							"parameters": {
+								"animation": "\"Neutral\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 483281310633862
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 333314698570897,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 496158896407243,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 424361814006144,
+							"parameters": {
+								"animation": "\"Good\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 701944074791304
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 858089808195993,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 121374841813139,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 661939612863970,
+							"parameters": {
+								"animation": "\"Bad\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 774544043040487
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 782765033682570,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 533784203837334,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 767979928558721,
+							"parameters": {
+								"animation": "\"Good\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 832529598052925
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 950881178568664,
+							"parameters": {
+								"variable": "Nightmares",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 802638118698728,
+							"parameters": {
+								"variable": "Dreams",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Window",
+							"sid": 198054326545587,
+							"parameters": {
+								"animation": "\"Bad\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 826227141689739
+				}
+			],
+			"sid": 536313448237016
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 205166893424909,
+					"id": "layer-name-exists",
+					"objectClass": "System",
+					"sid": 403533755174480,
 					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "Aquarium"
+						"layer": "\"BG\""
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "go-to-layout",
+					"id": "set-canvas-size",
 					"objectClass": "System",
-					"sid": 562153516799120,
+					"sid": 842660931663284,
 					"parameters": {
-						"layout": "seaDream"
+						"width": "1708",
+						"height": "960"
 					}
 				}
 			],
-			"sid": 155606959661762
+			"sid": 871838114186036
 		}
 	],
 	"sid": 409923043173519

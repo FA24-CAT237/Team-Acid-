@@ -1,0 +1,55 @@
+{
+	"name": "StarPiece5",
+	"plugin-id": "Sprite",
+	"sid": 354923130425273,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 861870305161452
+		},
+		{
+			"behaviorId": "Orbit",
+			"name": "Orbit",
+			"sid": 349223847424052
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 366057425869143
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5582480,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 709108769861561,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

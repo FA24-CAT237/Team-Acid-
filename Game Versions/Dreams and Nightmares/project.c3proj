@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 40702,
+	"savedWithRelease": 41600,
 	"name": "dreams&Nightmares",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -22,8 +22,36 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -43,8 +71,43 @@
 		},
 		{
 			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "MoveTo",
 			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Orbit",
+			"name": "Orbit",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -71,38 +134,252 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "TileMovement",
+			"name": "Tile movement",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "softlight",
+			"name": "Soft light",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "warpripple",
+			"name": "Warp ripple",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "water",
+			"name": "Water",
+			"author": "Viktor Korsun",
 			"bundled": false
 		}
 	],
 	"uniqueId": "vliteo4b7vp",
 	"objectTypes": {
 		"items": [
-			"starFace",
-			"starBlade1",
-			"starBlade2",
-			"starBlade3",
-			"bedroom",
-			"Candle",
-			"Aquarium",
-			"DeadPlant",
-			"Headlights",
-			"Sprite5",
 			"Tilemap",
-			"Sprite",
+			"CompletePortal",
+			"ParadiseBG",
+			"Barrier",
+			"Marker",
+			"MeteorM",
+			"MeteorS",
+			"MeteorL",
+			"RestartPortal",
+			"FoV",
+			"FoV2",
+			"FoV3",
+			"FoV4",
+			"FoV5",
+			"FoV6",
+			"FoV7",
+			"FoV8",
+			"Fish",
+			"PlayerDetector",
+			"TutorialUI",
+			"RunUI",
+			"StarPieceParticles",
 			"Sprite2",
-			"Mouse",
 			"Sprite3",
-			"Keyboard"
+			"Sprite4",
+			"Sprite5",
+			"Sprite6",
+			"Sprite7",
+			"TiledBackground",
+			"TitleScreenBG",
+			"PlayerDetector2",
+			"PlayerDetector3",
+			"PlayerDetector4",
+			"PlayerDetector5"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"Aquarium",
+					"bedroom",
+					"Candle",
+					"DeadPlant",
+					"Headlights",
+					"LightLamp",
+					"LightBullets",
+					"ShootingGunThingy",
+					"Book",
+					"starBlade1",
+					"starBlade2",
+					"starBlade3",
+					"starFace",
+					"Window",
+					"DreamBed",
+					"NightmareBed",
+					"StarPiece",
+					"Sprite",
+					"Platform",
+					"StarPiece2",
+					"StarPiece3",
+					"StarPiece4",
+					"StarPiece5",
+					"DarkBullets",
+					"StarPieceUI"
+				],
+				"subfolders": [],
+				"name": "Sprites"
+			},
+			{
+				"items": [
+					"Mouse",
+					"Keyboard",
+					"MouseCursor",
+					"MouseCursorFocus",
+					"CountDown",
+					"TextInput"
+				],
+				"subfolders": [],
+				"name": "Tech"
+			},
+			{
+				"items": [
+					"HS_BG",
+					"HellscapeLakeofFire",
+					"Sprite13",
+					"Sprite12"
+				],
+				"subfolders": [],
+				"name": "Hellscape Assets"
+			},
+			{
+				"items": [
+					"HeavenBG1",
+					"HeavenBG2",
+					"HeavenSkyBG",
+					"CloudLargePlatform"
+				],
+				"subfolders": [],
+				"name": "Heaven Assets"
+			},
+			{
+				"items": [
+					"EerieMansionBG",
+					"TheHooded",
+					"TheHooded2",
+					"TheHooded3",
+					"TheHooded4",
+					"TheHooded5",
+					"TheHooded6",
+					"TheHooded7",
+					"TheHooded8"
+				],
+				"subfolders": [],
+				"name": "Eerie Mansion Assets"
+			},
+			{
+				"items": [
+					"Bubble1",
+					"Bubble2",
+					"Bubble3",
+					"Bubble4",
+					"Bubble5",
+					"SeaWater",
+					"SeaBG",
+					"Chest",
+					"Chest2",
+					"Chest3",
+					"Chest4",
+					"Chest5",
+					"Chest6",
+					"Chest7",
+					"Chest8",
+					"Chest9",
+					"Chest10",
+					"Chest11",
+					"Chest12"
+				],
+				"subfolders": [],
+				"name": "Sea Assets"
+			},
+			{
+				"items": [
+					"DreamscapeBG",
+					"CameraDreamscape"
+				],
+				"subfolders": [],
+				"name": "Dreamscape Assets"
+			},
+			{
+				"items": [
+					"DarkWoodaBackTreesBG",
+					"DarkwoodsDungeonBG",
+					"DarkWoodsForestBG",
+					"DarkWoodsFrontTrees",
+					"DarkWoodsGroundBG",
+					"DarkWoodsNightBG",
+					"DarkWoodsUndrgrndBG",
+					"MagicThorns",
+					"UnknownThorns"
+				],
+				"subfolders": [],
+				"name": "Darkwoods Assets"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Chests",
+			"StarPieces",
+			"Meteor",
+			"HoodedOnes",
+			"FoVs"
+		],
 		"subfolders": []
 	},
 	"layouts": {
@@ -113,7 +390,8 @@
 			"heavenDream",
 			"eeriemansionNightmare",
 			"darkwoodsNightmare",
-			"hellscapeNightmare"
+			"hellscapeNightmare",
+			"Title Screen"
 		],
 		"subfolders": []
 	},
@@ -125,7 +403,8 @@
 			"eeriemansionNightmare",
 			"darkwoodsNightmare",
 			"hellscapeNightmare",
-			"Room"
+			"Room",
+			"Title Screen"
 		],
 		"subfolders": []
 	},
@@ -280,11 +559,10 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 854,
-	"viewportHeight": 480,
-	"firstLayout": null
+	"viewportWidth": 1708,
+	"viewportHeight": 960,
+	"firstLayout": "Title Screen"
 }

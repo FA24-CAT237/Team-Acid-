@@ -1,5 +1,904 @@
 {
 	"name": "hellscapeNightmare",
-	"events": [],
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Star2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 371660589948010
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 317659917875968,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".35"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade1",
+							"sid": 543547212639115,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "starBlade1",
+							"sid": 766017753328646,
+							"disabled": true,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"acceleration": "145"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 531991668269394,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".75"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade2",
+							"sid": 189397330366902,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 394630937805215,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".65"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade3",
+							"sid": 240928818490462,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 605262948742203
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 905760223977346
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "starBlade1",
+							"sid": 222848202072449,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "starBlade2",
+							"sid": 509764488655738,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "starBlade3",
+							"sid": 407525024166037,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						}
+					],
+					"sid": 674524951400090
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 207279415709886,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 703087116888488,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 455689638614562
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 396477395807148,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 127793895067488,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 330977034629159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 775589579006683,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 112497438258843,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 414821344438786
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 379098773613115,
+							"parameters": {
+								"object": "StarPieces"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 853220774045556,
+							"parameters": {
+								"object": "StarPieces"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "StarPieces",
+							"sid": 192303700866496
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 455327723797458,
+							"parameters": {
+								"variable": "StarPiecesCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 796170638046433,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "LightBullets",
+									"sid": 976924390204716,
+									"parameters": {
+										"object": "StarPieces"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "LightBullets",
+									"sid": 359330639920518
+								}
+							],
+							"sid": 310283712756055
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 328307921882083
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Lamp6",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 987107031800458,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "LightLamp",
+							"sid": 815650761610591,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"value": "5"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 961424203447532,
+							"parameters": {
+								"frame-number": "5"
+							}
+						}
+					],
+					"sid": 916923889672601
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 647349205125315,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 256391891147026,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 569089056849298
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 734398620707320,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 543880207627187,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 697943210282619
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 525564224064655,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 693370114945168,
+							"parameters": {
+								"frame-number": "2"
+							}
+						}
+					],
+					"sid": 595575562351879
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 411065613303914,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 709764854627761,
+							"parameters": {
+								"frame-number": "3"
+							}
+						}
+					],
+					"sid": 287210909647323
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 630318176599983,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 623161106986377,
+							"parameters": {
+								"frame-number": "4"
+							}
+						}
+					],
+					"sid": 448396057327096
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 261690812848176,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 251378787109261,
+							"parameters": {
+								"frame-number": "5"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 335344767608072,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CompletePortal",
+							"sid": 760718461751193,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 795436860242502
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 488593725493719,
+							"parameters": {
+								"object": "CompletePortal"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "CompletePortal",
+							"sid": 964591171528359
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 251498874423099,
+							"parameters": {
+								"variable": "Nightmares",
+								"value": "1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 578307543519306,
+							"parameters": {
+								"layout": "Room"
+							}
+						}
+					],
+					"sid": 131753256192801
+				}
+			],
+			"sid": 405038178528876
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "starFace",
+					"sid": 271902522549168,
+					"parameters": {
+						"object": "Sprite13"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "starFace",
+					"sid": 151664046283296
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 668458701436037,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 294147581353775
+				}
+			],
+			"sid": 577396412394007
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 667390839885321,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "fall-through",
+					"objectClass": "starFace",
+					"sid": 735908153407062,
+					"behaviorType": "Platform"
+				}
+			],
+			"sid": 771450387268182
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bullet6",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 962328260335768,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 930722553755503,
+							"parameters": {
+								"first-value": "LightBullets.count",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "starFace",
+							"sid": 516507601594907,
+							"parameters": {
+								"object": "LightBullets",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "LightBullets",
+							"sid": 561347474003833,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "LightBullets",
+							"sid": 621516187972241,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "60"
+							}
+						}
+					],
+					"sid": 640523949787209
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 422267999080432
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 639167213907527,
+							"parameters": {
+								"seconds": ".5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 971780298629668
+						}
+					],
+					"sid": 803502461544092
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 583431096773961,
+							"parameters": {
+								"object": "LightLamp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 976025727603398
+						}
+					],
+					"sid": 933625176662362,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 597095894914992
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "LightLamp",
+									"sid": 508489815614374,
+									"parameters": {
+										"instance-variable": "LightLevel",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 869869322327146
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "LightBullets",
+							"sid": 272818077912901,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 5,
+								"distance": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 279131331339703
+						}
+					],
+					"sid": 318187538811351
+				}
+			],
+			"sid": 584319285636361
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "starFace",
+					"sid": 689220312140322,
+					"parameters": {
+						"object": "HellscapeLakeofFire"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "starFace",
+					"sid": 933637744072634
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 815640592790422,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 859955851086685
+				}
+			],
+			"sid": 577830279587300
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-name-exists",
+					"objectClass": "System",
+					"sid": 350963206427964,
+					"parameters": {
+						"layer": "\"BG\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 801415736156344,
+					"parameters": {
+						"width": "1708",
+						"height": "1708"
+					}
+				}
+			],
+			"sid": 776825299167106
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "starFace",
+					"sid": 484058568239256,
+					"parameters": {
+						"object": "Platform"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 459737379811660,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 681587414048602,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fall-through",
+							"objectClass": "starFace",
+							"sid": 370095477924097,
+							"behaviorType": "Platform"
+						}
+					],
+					"sid": 970855058048187
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "LightBullets",
+					"sid": 692726618584879,
+					"parameters": {
+						"object": "LightLamp"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 115116309407057,
+					"parameters": {
+						"variable": "StarPiecesCollected",
+						"comparison": 5,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "LightBullets",
+					"sid": 995878491292033
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 676441449034745,
+					"parameters": {
+						"variable": "StarPiecesCollected",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 482346909019830,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 756832392769166
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "LightLamp",
+							"sid": 811854918043074,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 601907466735072
+				}
+			]
+		}
+	],
 	"sid": 867830954592562
 }

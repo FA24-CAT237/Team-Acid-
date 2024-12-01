@@ -1,0 +1,24 @@
+{
+	"name": "Meteor",
+	"plugin-id": "Sprite",
+	"sid": 750622448887169,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo2",
+			"sid": 899736479026410
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 123557710926909
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"MeteorL",
+		"MeteorS",
+		"MeteorM"
+	]
+}

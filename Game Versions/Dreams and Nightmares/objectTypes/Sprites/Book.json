@@ -1,0 +1,59 @@
+{
+	"name": "Book",
+	"plugin-id": "Sprite",
+	"sid": 859059847920704,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 960,
+						"height": 960,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3976663,
+						"collisionPoly": {
+							"points": [
+								0.625,
+								0.0625,
+								0.71875,
+								0.078125,
+								0.96875,
+								0.515625,
+								0.25,
+								0.859375,
+								0.015625,
+								0.46875,
+								0.015625,
+								0.390625,
+								0.046875,
+								0.359375,
+								0.390625,
+								0.09375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 944710935396167,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

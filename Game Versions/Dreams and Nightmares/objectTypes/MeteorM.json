@@ -1,0 +1,92 @@
+{
+	"name": "MeteorM",
+	"plugin-id": "Sprite",
+	"sid": 571376212454440,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 278666317001059
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 338553742881211
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 94,
+						"height": 100,
+						"originX": 0.5638297872340425,
+						"originY": 0.47,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9439563,
+						"collisionPoly": {
+							"points": [
+								0.32978723404255317,
+								0.01,
+								0.39361702127659576,
+								0.01,
+								0.648936170212766,
+								0.07,
+								0.9042553191489362,
+								0.25,
+								0.9893617021276596,
+								0.41,
+								0.9893617021276596,
+								0.67,
+								0.9680851063829787,
+								0.73,
+								0.7978723404255319,
+								0.89,
+								0.7127659574468085,
+								0.93,
+								0.5851063829787234,
+								0.97,
+								0.4787234042553192,
+								0.99,
+								0.4148936170212766,
+								0.99,
+								0.30851063829787234,
+								0.95,
+								0.20212765957446807,
+								0.87,
+								0.010638297872340425,
+								0.69,
+								0.010638297872340425,
+								0.59,
+								0.09574468085106383,
+								0.13,
+								0.18085106382978725,
+								0.07,
+								0.26595744680851063,
+								0.03
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 190355150028090,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

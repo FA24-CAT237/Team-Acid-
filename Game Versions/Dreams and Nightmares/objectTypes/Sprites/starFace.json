@@ -1,0 +1,143 @@
+{
+	"name": "starFace",
+	"plugin-id": "Sprite",
+	"sid": 202166548440447,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "CanShoot",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 999358634392140
+		},
+		{
+			"name": "FastFall",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 341707451258217
+		},
+		{
+			"name": "Checkpoint1",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 644844160818688
+		},
+		{
+			"name": "Checkpoint2",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 492067772773475
+		},
+		{
+			"name": "Checkpoint3",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 330278256577204
+		},
+		{
+			"name": "Checkpoint4",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 238808270731817
+		},
+		{
+			"name": "Checkpoint5",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 950499634520665
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 900442217209922
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 288692681943622
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 775155141386545
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 199432559927607
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 153057840590497
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 117,
+						"height": 73,
+						"originX": 0.47863247863247865,
+						"originY": 0.4657534246575342,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3316007,
+						"collisionPoly": {
+							"points": [
+								0.5128205128205128,
+								0.0136986301369863,
+								0.5897435897435898,
+								0.0136986301369863,
+								0.905982905982906,
+								0.4931506849315068,
+								0.9914529914529915,
+								0.7534246575342466,
+								0.9914529914529915,
+								0.8493150684931506,
+								0.9316239316239316,
+								0.9452054794520548,
+								0.8290598290598291,
+								0.9863013698630136,
+								0.1452991452991453,
+								0.9041095890410961,
+								0.08547008547008547,
+								0.8493150684931506,
+								0.03418803418803422,
+								0.7534246575342466,
+								0.008547008547008548,
+								0.6164383561643836,
+								0.05128205128205128,
+								0.3972602739726027
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 922184025422025,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

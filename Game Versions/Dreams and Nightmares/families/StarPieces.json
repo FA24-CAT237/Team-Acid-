@@ -1,0 +1,16 @@
+{
+	"name": "StarPieces",
+	"plugin-id": "Sprite",
+	"sid": 589016923288417,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"StarPiece",
+		"StarPiece2",
+		"StarPiece3",
+		"StarPiece4",
+		"StarPiece5",
+		"StarPieceUI"
+	]
+}

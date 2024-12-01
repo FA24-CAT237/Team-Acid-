@@ -1,5 +1,2572 @@
 {
 	"name": "eeriemansionNightmare",
-	"events": [],
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Star4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 200025906850894
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 722758223970022,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".35"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade1",
+							"sid": 215222493578691,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "starBlade1",
+							"sid": 786307113798404,
+							"disabled": true,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"acceleration": "145"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 886448273424579,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".75"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade2",
+							"sid": 829601469739194,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 213964271614219,
+							"disabled": true,
+							"parameters": {
+								"seconds": ".65"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "starBlade3",
+							"sid": 502099481232061,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 668928984011326
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 103765514559152
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "starBlade1",
+							"sid": 470441985991223,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "starBlade2",
+							"sid": 155472818937308,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "starBlade3",
+							"sid": 706845450251714,
+							"parameters": {
+								"x": "starFace.X",
+								"y": "starFace.Y"
+							}
+						}
+					],
+					"sid": 607813311148887
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 832299807242735,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 805446508270563,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 583151601721150
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 849142762474657,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 855239287662081,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 599241395486964
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 645204960848280,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 150210359065034,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 447425642424656
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 751549248544185,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 574403000017711,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 756352212049515
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 789900661815453,
+							"parameters": {
+								"object": "StarPieces"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 849362295950460,
+							"parameters": {
+								"object": "StarPieces"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "StarPieces",
+							"sid": 974375493764963
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 952909157047135,
+							"parameters": {
+								"variable": "StarPiecesCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 534668978629510,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "LightBullets",
+									"sid": 802136155535131,
+									"parameters": {
+										"object": "StarPieces"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "LightBullets",
+									"sid": 172095856762636
+								}
+							],
+							"sid": 646850259449216
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 289247619934144,
+							"parameters": {
+								"object": "HoodedOnes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "starFace",
+							"sid": 845166972220657
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 153571446917031,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 436298931410508
+						}
+					],
+					"sid": 542877139306329
+				}
+			],
+			"sid": 362275197049850
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Lamp4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 490520085084736,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "LightLamp",
+							"sid": 768536794540863,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"value": "5"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 598054037372644,
+							"parameters": {
+								"frame-number": "5"
+							}
+						}
+					],
+					"sid": 628198770133666
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 344962091405994,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 982664191042991,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 216121472757420
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 449373916737533,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 459538960157155,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 195358810390550
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 510868382919720,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 197817406717684,
+							"parameters": {
+								"frame-number": "2"
+							}
+						}
+					],
+					"sid": 524146197137612
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 612144343334938,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 908747649359660,
+							"parameters": {
+								"frame-number": "3"
+							}
+						}
+					],
+					"sid": 939943667503993
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 773867930325839,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 987204434902841,
+							"parameters": {
+								"frame-number": "4"
+							}
+						}
+					],
+					"sid": 641970918767434
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 869718232629212,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 359079223628299,
+							"parameters": {
+								"frame-number": "5"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 885301377545888,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CompletePortal",
+							"sid": 385131066582661,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 351725529450116
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 302774878236502,
+							"parameters": {
+								"object": "CompletePortal"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "CompletePortal",
+							"sid": 526998815459833
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 318211926662164,
+							"parameters": {
+								"variable": "Nightmares",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 403750503445079,
+							"parameters": {
+								"variable": "CandleLevel",
+								"value": "1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 818689155854177,
+							"parameters": {
+								"layout": "Room"
+							}
+						}
+					],
+					"sid": 820974197767630
+				}
+			],
+			"sid": 979846168034539
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bullet4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 898406025479987,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 669274384563879,
+							"parameters": {
+								"first-value": "LightBullets.count",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "starFace",
+							"sid": 855164760095911,
+							"parameters": {
+								"object": "LightBullets",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "LightBullets",
+							"sid": 721429681397488,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "LightBullets",
+							"sid": 282233872903885,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "60"
+							}
+						}
+					],
+					"sid": 723529885846515
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 742968921502664
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 939378488616258,
+							"parameters": {
+								"seconds": ".5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 598528008694354
+						}
+					],
+					"sid": 399029564773465
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 758402189147995,
+							"parameters": {
+								"object": "LightLamp"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 215847206543108,
+							"parameters": {
+								"variable": "StarPiecesCollected",
+								"comparison": 5,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 998061091981467
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 508124652885948,
+							"parameters": {
+								"variable": "StarPiecesCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 924745150956211,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 273674206695981
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "LightLamp",
+									"sid": 993128000132150,
+									"parameters": {
+										"instance-variable": "LightLevel",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 223406033355921
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "DarkBullets",
+							"sid": 128423469883721,
+							"parameters": {
+								"object": "LightLamp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "DarkBullets",
+							"sid": 599564917945049
+						},
+						{
+							"id": "destroy",
+							"objectClass": "starFace",
+							"sid": 907351658425835
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 368503310836934,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 875049217014524
+						}
+					],
+					"sid": 500096198544939
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 996832204809902,
+							"parameters": {
+								"object": "HoodedOnes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 166178121055902
+						}
+					],
+					"sid": 761010767891811
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "LightBullets",
+							"sid": 165523680015416,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 5,
+								"distance": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 584782232705186
+						}
+					],
+					"sid": 698614801253933
+				}
+			],
+			"sid": 519853571492754
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ShadowGuys",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 537065701000898,
+							"parameters": {
+								"object": "FoV"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 334122846930718,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 239199781173815,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded",
+									"sid": 353690557237433,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 530342488501293,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 951124310158888,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 257952969492563
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 765664381834422,
+							"parameters": {
+								"object": "FoV2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 835954298857671,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 205134321985124,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded2",
+									"sid": 884725043554685,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 944444025435416,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 595217832318358,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 345436768828316
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 655667378449328,
+							"parameters": {
+								"object": "FoV3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 869622171736264,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 489295113478085,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded3",
+									"sid": 681792496664149,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 380832364155632,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 602230228079168,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 992463453460141
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 141607930840199,
+							"parameters": {
+								"object": "FoV4"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 713601561497335,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 838218154507300,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded4",
+									"sid": 941771770084148,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 324109733654758,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 117745788685282,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 324824542234526
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 927537419390471,
+							"parameters": {
+								"object": "FoV5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 566216991840994,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 245426407247993,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded5",
+									"sid": 520737212217983,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 799293255555230,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 570534940338241,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 502977187957581
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 257967547908729,
+							"parameters": {
+								"object": "FoV6"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 649104332161057,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 270765467834622,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded6",
+									"sid": 906548887227809,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 806463776361870,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 719235079618074,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 100812137540427
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 128864478822280,
+							"parameters": {
+								"object": "FoV7"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 679853168259544,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 374382051009911,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded7",
+									"sid": 839697403444032,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 546854355027997,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 470386863672722,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 457963980155435
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "starFace",
+							"sid": 310731621459043,
+							"parameters": {
+								"object": "FoV8"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 769567916423983,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 406968394995907,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "TheHooded8",
+									"sid": 739989707177840,
+									"parameters": {
+										"object": "DarkBullets",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "DarkBullets",
+									"sid": 103479160125805,
+									"parameters": {
+										"x": "starFace.X",
+										"y": "starFace.Y"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "DarkBullets",
+									"sid": 738432668513523,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								}
+							],
+							"sid": 831374713297405
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy1",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded",
+									"sid": 547652924595619,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV",
+									"sid": 368760503228831,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 493932852672882
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded",
+									"sid": 478533058439418,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV",
+									"sid": 174169606647535,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 905999202984180
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded",
+									"sid": 532588367237707,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV",
+									"sid": 231031860708202,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 756584582556553
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded",
+									"sid": 157167246571154,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV",
+									"sid": 307733972332275,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 769430782681289
+						}
+					],
+					"sid": 421265557300523
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded2",
+									"sid": 188331570399258,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV2",
+									"sid": 788057470391754,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 562732587033919
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded2",
+									"sid": 218662301620837,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV2",
+									"sid": 256324534043744,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 451785672061928
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded2",
+									"sid": 174317837503822,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV2",
+									"sid": 190804850583966,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 835698497410381
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded2",
+									"sid": 324453587341794,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV2",
+									"sid": 654876822956349,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 688336646398051
+						}
+					],
+					"sid": 425738580496824
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy3",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded3",
+									"sid": 874850946801373,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV3",
+									"sid": 183874435418673,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 660174764015437
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded3",
+									"sid": 676492203048474,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV3",
+									"sid": 414354373851412,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 761903016124375
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded3",
+									"sid": 155796524147837,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV3",
+									"sid": 368131868109049,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 243683728354570
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded3",
+									"sid": 117919261581494,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV3",
+									"sid": 254676431166055,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 976423681253984
+						}
+					],
+					"sid": 413389014299478
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy4",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded4",
+									"sid": 870046703454159,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV4",
+									"sid": 282619433558957,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 459324063678777
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded4",
+									"sid": 454300794179370,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV4",
+									"sid": 926255245449732,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 515986959068648
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded4",
+									"sid": 664925080336564,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV4",
+									"sid": 285504692141769,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 389903147121049
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded4",
+									"sid": 838473518622128,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV4",
+									"sid": 216403534344658,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 557246315205243
+						}
+					],
+					"sid": 265718109568818
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy5",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded5",
+									"sid": 972302553955081,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV5",
+									"sid": 532937454937886,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 121228337014011
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded5",
+									"sid": 163165226172827,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV5",
+									"sid": 873269240109163,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 297524261410267
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded5",
+									"sid": 347812596666608,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV5",
+									"sid": 285078225727784,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 684026735438448
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded5",
+									"sid": 215290728097767,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV5",
+									"sid": 799193384356959,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 902571609385027
+						}
+					],
+					"sid": 130523572079767
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy6",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded6",
+									"sid": 701779548635554,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV6",
+									"sid": 154372760651701,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 398915100606563
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded6",
+									"sid": 791747152107577,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV6",
+									"sid": 325706027037940,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 265725091822977
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded6",
+									"sid": 870245252037891,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV6",
+									"sid": 695502265323909,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 442936466590274
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded6",
+									"sid": 111442578740707,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV6",
+									"sid": 992192140191304,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 952265025766757
+						}
+					],
+					"sid": 756528994381599
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy7",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded7",
+									"sid": 991181219838801,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV7",
+									"sid": 856903587461148,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 521354384635308
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded7",
+									"sid": 568280955004855,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV7",
+									"sid": 728723499657102,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 751286477794205
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded7",
+									"sid": 913814780373219,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV7",
+									"sid": 285764016960160,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 672602940687962
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded7",
+									"sid": 270573743225160,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV7",
+									"sid": 151301930360191,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 880465584762386
+						}
+					],
+					"sid": 142455199259312
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ShadowGuy8",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded8",
+									"sid": 276785132730932,
+									"parameters": {
+										"animation": "\"Up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV8",
+									"sid": 703687764448087,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 522173878244971
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded8",
+									"sid": 648265531311439,
+									"parameters": {
+										"animation": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV8",
+									"sid": 904706172327158,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 972641612415784
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded8",
+									"sid": 571961162208597,
+									"parameters": {
+										"animation": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV8",
+									"sid": 667458064175805,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 123389752446492
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "TheHooded8",
+									"sid": 604717842199392,
+									"parameters": {
+										"animation": "\"Down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "FoV8",
+									"sid": 383801494029351,
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 499971083824148
+						}
+					],
+					"sid": 230672320875380
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 860299544637295
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV",
+							"sid": 600195247172934,
+							"parameters": {
+								"object": "TheHooded",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 126638082810436
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 412268098866445
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV2",
+							"sid": 571179810974856,
+							"parameters": {
+								"object": "TheHooded2",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 276040260984501
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 826125389883217
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV3",
+							"sid": 554521137064634,
+							"parameters": {
+								"object": "TheHooded3",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 862398181800447
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 573187436702865
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV4",
+							"sid": 771444983308793,
+							"parameters": {
+								"object": "TheHooded4",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 283408385314617
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 631984787714542
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV5",
+							"sid": 587425992737450,
+							"parameters": {
+								"object": "TheHooded5",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 262613795623808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 656312604246217
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV6",
+							"sid": 656533013507252,
+							"parameters": {
+								"object": "TheHooded6",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 924756403047356
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 288245130283741
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV7",
+							"sid": 475495930012109,
+							"parameters": {
+								"object": "TheHooded7",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 997722438253443
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 628023065363062
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "FoV8",
+							"sid": 886774619637026,
+							"parameters": {
+								"object": "TheHooded8",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 671735449851435
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 647065078088741,
+							"parameters": {
+								"interval-seconds": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "HoodedOnes",
+							"sid": 900876551658821,
+							"parameters": {
+								"instance-variable": "Turn"
+							}
+						}
+					],
+					"sid": 791487037145789
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "HoodedOnes",
+							"sid": 157880851699368,
+							"parameters": {
+								"instance-variable": "Turn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded",
+							"sid": 360367383628628,
+							"parameters": {
+								"animation": "\"Right\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded2",
+							"sid": 454712093463195,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded3",
+							"sid": 489372992049378,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded4",
+							"sid": 456168519123704,
+							"parameters": {
+								"animation": "\"Right\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded5",
+							"sid": 784810011753554,
+							"parameters": {
+								"animation": "\"Up\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded6",
+							"sid": 822620821170684,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded7",
+							"sid": 429253268160970,
+							"parameters": {
+								"animation": "\"Down\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded8",
+							"sid": 317021499571926,
+							"parameters": {
+								"animation": "\"Up\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 206201373254559
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "HoodedOnes",
+							"sid": 406037608684831,
+							"parameters": {
+								"instance-variable": "Turn"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded",
+							"sid": 854149966666693,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded2",
+							"sid": 967509596361084,
+							"parameters": {
+								"animation": "\"Up\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded3",
+							"sid": 732976812032091,
+							"parameters": {
+								"animation": "\"Down\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded4",
+							"sid": 406440761080181,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded5",
+							"sid": 174089583652373,
+							"parameters": {
+								"animation": "\"Right\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded6",
+							"sid": 418524291367380,
+							"parameters": {
+								"animation": "\"Right\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded7",
+							"sid": 577544543492034,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TheHooded8",
+							"sid": 405761545523974,
+							"parameters": {
+								"animation": "\"Down\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 693013258267379
+				}
+			],
+			"sid": 898753665342481
+		}
+	],
 	"sid": 620258563471624
 }

@@ -1,0 +1,73 @@
+{
+	"name": "Headlights",
+	"plugin-id": "Sprite",
+	"sid": 738220299742015,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 827030186904167
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 407936122390526
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2267,
+						"height": 272,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2977152,
+						"collisionPoly": {
+							"points": [
+								0.0004411116012351125,
+								0.003676470588235294,
+								0.9797088663431849,
+								0.003676470588235294,
+								0.9995588883987648,
+								0.22426470588235295,
+								0.9995588883987648,
+								0.5,
+								0.9797088663431849,
+								0.6654411764705882,
+								0.7745919717688575,
+								0.9963235294117647,
+								0.19232465813850905,
+								0.9963235294117647,
+								0.0004411116012351125,
+								0.7757352941176471
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 585356745721918,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

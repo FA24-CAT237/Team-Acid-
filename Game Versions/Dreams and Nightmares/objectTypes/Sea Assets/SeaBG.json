@@ -1,0 +1,59 @@
+{
+	"name": "SeaBG",
+	"plugin-id": "Sprite",
+	"sid": 654761617415160,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "BubblesPopped",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 554300790383175
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 3320,
+						"height": 2500,
+						"originX": 0.5,
+						"originY": 0.456,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8907705,
+						"collisionPoly": {
+							"points": [
+								0.006024096385542169,
+								0.008,
+								0.9939759036144579,
+								0.008,
+								0.9939759036144579,
+								0.992,
+								0.006024096385542169,
+								0.992
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 303106057082864,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

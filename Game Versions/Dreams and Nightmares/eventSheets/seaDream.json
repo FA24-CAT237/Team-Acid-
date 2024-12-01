@@ -2,6 +2,26 @@
 	"name": "seaDream",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "BubblesPopped",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 651469284729238
+		},
+		{
+			"eventType": "variable",
+			"name": "StarPiecesCollected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 124672616966355
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Star",
@@ -129,9 +149,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
+							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 537164436366350,
+							"sid": 305448086414344,
 							"parameters": {
 								"key": 87
 							}
@@ -141,10 +161,10 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "starFace",
-							"sid": 776601264589793,
-							"behaviorType": "Platform",
+							"sid": 982000320455963,
+							"behaviorType": "8Direction",
 							"parameters": {
-								"control": "jump"
+								"control": "up"
 							}
 						}
 					],
@@ -166,14 +186,39 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "starFace",
-							"sid": 104979978230799,
-							"behaviorType": "Platform",
+							"sid": 369373316341864,
+							"behaviorType": "8Direction",
 							"parameters": {
 								"control": "left"
 							}
 						}
 					],
 					"sid": 383355826033577
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 202865971484863,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "starFace",
+							"sid": 517642114320506,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 254640582966324
 				},
 				{
 					"eventType": "block",
@@ -191,14 +236,76 @@
 						{
 							"id": "simulate-control",
 							"objectClass": "starFace",
-							"sid": 999740454219911,
-							"behaviorType": "Platform",
+							"sid": 747026809311884,
+							"behaviorType": "8Direction",
 							"parameters": {
 								"control": "right"
 							}
 						}
 					],
 					"sid": 165848591934131
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 816578622852139,
+							"parameters": {
+								"object": "StarPieces"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 756062419730703,
+							"parameters": {
+								"object": "StarPieces"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "StarPieces",
+							"sid": 817155474386394
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 565832093241876,
+							"parameters": {
+								"variable": "StarPiecesCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 335950524715468,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "LightBullets",
+									"sid": 411228477122463,
+									"parameters": {
+										"object": "StarPieces"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "LightBullets",
+									"sid": 934850270711833
+								}
+							],
+							"sid": 560535619918977
+						}
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 485244774135469
@@ -215,7 +322,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 323028775044530,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -227,7 +334,7 @@
 					"actions": [
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 550491029294570,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -236,7 +343,7 @@
 						},
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 168134094694433,
 							"parameters": {
 								"frame-number": "5"
@@ -250,7 +357,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 403223390877838,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -262,7 +369,7 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 129224982499326,
 							"parameters": {
 								"frame-number": "0"
@@ -276,7 +383,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 704304005608587,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -288,7 +395,7 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 783101488012386,
 							"parameters": {
 								"frame-number": "1"
@@ -302,7 +409,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 539682724908582,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -314,7 +421,7 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 578811267029200,
 							"parameters": {
 								"frame-number": "2"
@@ -328,7 +435,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 704165750447032,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -340,7 +447,7 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 410800510356149,
 							"parameters": {
 								"frame-number": "3"
@@ -354,7 +461,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 235263997882399,
 							"parameters": {
 								"instance-variable": "LightLevel",
@@ -366,30 +473,103 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite",
+							"objectClass": "LightLamp",
 							"sid": 799419237912335,
 							"parameters": {
 								"frame-number": "4"
+							}
+						}
+					],
+					"sid": 163796517502241
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LightLamp",
+							"sid": 780856942717733,
+							"parameters": {
+								"instance-variable": "LightLevel",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LightLamp",
+							"sid": 679041621230095,
+							"parameters": {
+								"frame-number": "5"
 							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 279550546376902,
+							"sid": 321783419867888,
 							"parameters": {
-								"seconds": "3"
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CompletePortal",
+							"sid": 533783870251231,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 444024774998093
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "starFace",
+							"sid": 783733608177830,
+							"parameters": {
+								"object": "CompletePortal"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "CompletePortal",
+							"sid": 449572640758573
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 616329030224992,
+							"parameters": {
+								"variable": "Dreams",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 690455474187029,
+							"parameters": {
+								"variable": "AquariumLevel",
+								"value": "1"
 							}
 						},
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 988509589661793,
+							"sid": 619974785269637,
 							"parameters": {
 								"layout": "Room"
 							}
 						}
 					],
-					"sid": 163796517502241
+					"sid": 977779876192950
 				}
 			],
 			"sid": 454416574516440
@@ -407,58 +587,56 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 978275043816146,
+							"sid": 128796668782510,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 862323288550037,
+							"parameters": {
+								"first-value": "LightBullets.count",
+								"comparison": 3,
+								"second-value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "spawn-another-object",
-							"objectClass": "Sprite3",
-							"sid": 935197280017427,
+							"objectClass": "starFace",
+							"sid": 314717377301045,
 							"parameters": {
-								"object": "Sprite2",
+								"object": "LightBullets",
 								"layer": "1",
-								"image-point": "1",
+								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
-						}
-					],
-					"sid": 760835130896264
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Sprite2",
-							"sid": 916662192675606,
+							"id": "set-angle-toward-position",
+							"objectClass": "LightBullets",
+							"sid": 367820209878674,
 							"parameters": {
-								"object": "Sprite"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Sprite",
-							"sid": 127700861454928,
-							"parameters": {
-								"instance-variable": "LightLevel",
-								"value": "1"
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
 							}
 						},
 						{
-							"id": "destroy",
-							"objectClass": "Sprite2",
-							"sid": 862357215631168
+							"id": "set-acceleration",
+							"objectClass": "LightBullets",
+							"sid": 821353845439152,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "1000"
+							}
 						}
 					],
-					"sid": 876629825747716
+					"sid": 213355871498083
 				},
 				{
 					"eventType": "block",
@@ -466,52 +644,1589 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 713124932930872
+							"sid": 616909643724380
 						}
 					],
 					"actions": [
 						{
-							"id": "pin-to-object-properties",
-							"objectClass": "Sprite3",
-							"sid": 709746296564529,
-							"behaviorType": "Pin",
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 188736332378296,
 							"parameters": {
-								"pin-to": "starFace",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
+								"seconds": ".5"
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 646201891684277
 						}
 					],
-					"sid": 252101111466927
+					"sid": 650399362036076
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 350146613030150,
+							"parameters": {
+								"object": "LightLamp"
+							}
+						},
+						{
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 141089450043875
+							"sid": 219447854931863,
+							"parameters": {
+								"variable": "StarPiecesCollected",
+								"comparison": 5,
+								"value": "1"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-angle-toward-position",
-							"objectClass": "Sprite3",
-							"sid": 774215544104698,
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 716156202838193
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 753019808517914,
 							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"variable": "StarPiecesCollected",
+								"value": "1"
 							}
 						}
 					],
-					"sid": 880067628811642
+					"sid": 722954054930994,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 154113962773001
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "LightLamp",
+									"sid": 953191264992724,
+									"parameters": {
+										"instance-variable": "LightLevel",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 364544215727217
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 478049597663313,
+							"parameters": {
+								"object": "Chests"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 150710392774463
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Chests",
+							"sid": 416197051004783,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 825754997105726
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 568282235747942,
+							"parameters": {
+								"object": "Chest5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "StarPiece2",
+							"sid": 708433719481511,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 188240385648818
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "LightBullets",
+							"sid": 486048967210062,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 5,
+								"distance": "3000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 634203978972692
+						}
+					],
+					"sid": 763223632105462
 				}
 			],
 			"sid": 390546521523160
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bubbles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 732243429079628,
+							"parameters": {
+								"object": "Bubble1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 717460352475725
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Bubble1",
+							"sid": 332063251654369,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 589642550842378,
+							"parameters": {
+								"seconds": ".1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble1",
+							"sid": 610095271122480,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "TextInput",
+							"sid": 249782297838388,
+							"parameters": {
+								"text": "\"1\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 426180487526806,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 513457709122277
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 761320857955139,
+							"parameters": {
+								"object": "Bubble2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 781096843925245
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Bubble2",
+							"sid": 368820459380911,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 630072084879906,
+							"parameters": {
+								"seconds": ".1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble2",
+							"sid": 309147680812208,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "TextInput",
+							"sid": 317246710003199,
+							"parameters": {
+								"text": "\"2\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 842974784284095,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 477294475307959
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 276763205275869,
+							"parameters": {
+								"object": "Bubble3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 145017191924472
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Bubble3",
+							"sid": 460425344070886,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 681788710151184,
+							"parameters": {
+								"seconds": ".1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble3",
+							"sid": 189670618601985,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "TextInput",
+							"sid": 106123451408788,
+							"parameters": {
+								"text": "\"3\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 906107236172690,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 105433730571691
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 467376001805222,
+							"parameters": {
+								"object": "Bubble4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 591095708752563
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Bubble4",
+							"sid": 669664622878363,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 209316627388507,
+							"parameters": {
+								"seconds": ".1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble4",
+							"sid": 368075571565539,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "TextInput",
+							"sid": 700298534614904,
+							"parameters": {
+								"text": "\"4\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 777127051703202,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 181534070249514
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LightBullets",
+							"sid": 843300163801390,
+							"parameters": {
+								"object": "Bubble5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LightBullets",
+							"sid": 711668092153488
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Bubble5",
+							"sid": 243173779504503,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 462310091807459,
+							"parameters": {
+								"seconds": ".1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble5",
+							"sid": 906903698932310,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "TextInput",
+							"sid": 475049478768395,
+							"parameters": {
+								"text": "\"5\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 101199262337978,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 318386014012084
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "TextInput",
+							"sid": 957368643125502,
+							"parameters": {
+								"text": "\"25341\"",
+								"case": "case-insensitive"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 857041097741263
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "StarPiece",
+							"sid": 945788240785279,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 588718682547245
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "TextInput",
+							"sid": 868156897863026,
+							"parameters": {
+								"text": "\"25341\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 642039276137747,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble1",
+							"sid": 495519941444658,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble2",
+							"sid": 296616078486321,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble3",
+							"sid": 511264093453220,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble4",
+							"sid": 314337816915259,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble5",
+							"sid": 567469324644024,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextInput",
+							"sid": 181235279497023,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 582931793803179,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 325101485864684,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 445063518200437
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble1",
+									"sid": 310957884728235,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble2",
+									"sid": 243087183084846,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble3",
+									"sid": 390857319319354,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble4",
+									"sid": 242601520230030,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble5",
+									"sid": 336114881228896,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 185652096563882
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "TextInput",
+							"sid": 412963832218579,
+							"parameters": {
+								"text": "\"2534\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 730118485124385,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble1",
+							"sid": 663910329939206,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble2",
+							"sid": 104474107059218,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble3",
+							"sid": 633333394842871,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble4",
+							"sid": 538083529418969,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble5",
+							"sid": 814094665476281,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextInput",
+							"sid": 274440157932606,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 568144491195985,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 844031362487078,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 353384429524556
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble1",
+									"sid": 485711091553369,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble2",
+									"sid": 729182459493579,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble3",
+									"sid": 449839519546878,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble4",
+									"sid": 707564781728883,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble5",
+									"sid": 347428936474047,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 504351012484842
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "TextInput",
+							"sid": 890516100089410,
+							"parameters": {
+								"text": "\"253\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 540033961057380,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble1",
+							"sid": 258649821276035,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble2",
+							"sid": 452602522580748,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble3",
+							"sid": 352733489402353,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble4",
+							"sid": 473703063971345,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble5",
+							"sid": 760933188071609,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextInput",
+							"sid": 802001928182134,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 395781148635278,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 648295140226395,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 571620971229838
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble1",
+									"sid": 746260038080975,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble2",
+									"sid": 362047345369697,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble3",
+									"sid": 307694133989588,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble4",
+									"sid": 635208649837257,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble5",
+									"sid": 206457229599391,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 506220957782223
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "TextInput",
+							"sid": 235819614657091,
+							"parameters": {
+								"text": "\"25\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 314338601416267,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble1",
+							"sid": 103079792455715,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble2",
+							"sid": 668135960053314,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble3",
+							"sid": 740400237577084,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble4",
+							"sid": 621217949393975,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble5",
+							"sid": 524980460690463,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextInput",
+							"sid": 824065821466655,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 297443102783471,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 413586749714471,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 794827229630679
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble1",
+									"sid": 333588169632916,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble2",
+									"sid": 929072728768024,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble3",
+									"sid": 813027901582303,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble4",
+									"sid": 235649913520520,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble5",
+									"sid": 620829607166183,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 877739147705048
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "TextInput",
+							"sid": 706427377705331,
+							"parameters": {
+								"text": "\"25\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 401834294500239,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble1",
+							"sid": 636183297048434,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble2",
+							"sid": 375127555887454,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble3",
+							"sid": 476157783503253,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble4",
+							"sid": 247500866438887,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Bubble5",
+							"sid": 286949361182939,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextInput",
+							"sid": 104518868532474,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 417298405385906,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 575798851859900,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 687637837252825
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble1",
+									"sid": 183571299048473,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble2",
+									"sid": 815248205009674,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble3",
+									"sid": 869348980800143,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble4",
+									"sid": 649706944850420,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Bubble5",
+									"sid": 538235156094795,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 627027594557043
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble1",
+							"sid": 598077561724934
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble1",
+							"sid": 566354598067924,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 804555290448103
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble1",
+							"sid": 836567960343093,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble1",
+							"sid": 589612669698350,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 793100975914596
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble2",
+							"sid": 276289934487945
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble2",
+							"sid": 938805933450460,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 106275846946093
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble2",
+							"sid": 185449043852691,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble2",
+							"sid": 645115394185975,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 878303167607799
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble3",
+							"sid": 889320435911601
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble3",
+							"sid": 317358149567076,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 971465440868370
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble3",
+							"sid": 143638895074282,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble3",
+							"sid": 767434348437393,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 118612682044226
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble4",
+							"sid": 769070024532197
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble4",
+							"sid": 978685962055604,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 794292962366594
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble4",
+							"sid": 332116201165504,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble4",
+							"sid": 962302224772781,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 958071955445949
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble5",
+							"sid": 922377012203243
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble5",
+							"sid": 536298330838683,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 283533041921629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Bubble5",
+							"sid": 936565272796072,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bubble5",
+							"sid": 627406708964622,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 393488425840075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 286427090492542,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 610535931028561,
+							"parameters": {
+								"variable": "BubblesPopped",
+								"value": "5"
+							}
+						}
+					],
+					"sid": 414093883715433
+				}
+			],
+			"sid": 444643557371899
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Group1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 322499897078573
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-name-exists",
+					"objectClass": "System",
+					"sid": 160958113030855,
+					"parameters": {
+						"layer": "\"BG\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 203838145985735,
+					"parameters": {
+						"width": "10248",
+						"height": "5760"
+					}
+				}
+			],
+			"sid": 766953260447219
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "starFace",
+					"sid": 449814807820656,
+					"parameters": {
+						"object": "Fish"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "find-path",
+					"objectClass": "Fish",
+					"sid": 646455399961770,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"x": "StarPiece5.X",
+						"y": "StarPiece5.Y"
+					}
+				}
+			],
+			"sid": 459766372292919
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-path-found",
+					"objectClass": "Fish",
+					"sid": 989931733913907,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "move-along-path",
+					"objectClass": "Fish",
+					"sid": 548224137270682,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"sid": 475810498953995
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "Fish",
+					"sid": 534375749402807,
+					"behaviorType": "Pathfinding"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Fish",
+					"sid": 455960435430006,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"set": "disabled"
+					}
+				}
+			],
+			"sid": 184472174856741
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "StarPieces",
+					"sid": 870149489596409
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 657556655262327,
+					"parameters": {
+						"object-to-create": "StarPieceParticles",
+						"layer": "1",
+						"x": "StarPieces.X",
+						"y": "StarPieces.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 581323051958126
 		}
 	],
 	"sid": 309825769500854

@@ -1,0 +1,22 @@
+{
+	"name": "Chests",
+	"plugin-id": "Sprite",
+	"sid": 619581491959398,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Chest",
+		"Chest10",
+		"Chest11",
+		"Chest12",
+		"Chest2",
+		"Chest3",
+		"Chest4",
+		"Chest5",
+		"Chest6",
+		"Chest7",
+		"Chest8",
+		"Chest9"
+	]
+}

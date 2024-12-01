@@ -1,0 +1,15 @@
+{
+	"name": "CountDown",
+	"plugin-id": "Text",
+	"sid": 639967611167964,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 729437412393395
+		}
+	],
+	"effectTypes": []
+}
